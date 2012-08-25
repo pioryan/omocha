@@ -17,4 +17,4 @@ pickle-email-*.html
 /.idea/
 /spec/fixtures
 .project
-/public
+/public/assets
