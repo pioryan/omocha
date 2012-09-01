@@ -1,4 +1,6 @@
 Omocha::Application.routes.draw do
+  get "registrations/create"
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
