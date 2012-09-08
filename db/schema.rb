@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120818105805) do
+ActiveRecord::Schema.define(:version => 20120908171323) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(:version => 20120818105805) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "firstname"
+    t.string   "middlename"
+    t.string   "lastname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
