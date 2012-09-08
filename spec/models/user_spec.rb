@@ -5,12 +5,19 @@ describe User do
   describe "validations" do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:firstname) }
+    
+    #this test is the old version of the test above
     it "should validate presence of firstname" do
       user = User.new(:email => "admin1@admin.com", :password => 'password')
-      user.valid?
-      user.should have(0).errors_on(:firstname)
-      user.should be_valid
+      user.should have(1).errors_on(:firstname)
     end
+    
+   it "should validate presence of lastname" do
+      user = User.new(:email => "admin1@admin.com", :password => 'password')
+      user.should have(1).errors_on(:lastname)
+    end    
+    
+
   end
 
   it "works" do
