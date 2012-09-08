@@ -17,6 +17,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.8.0'
   #gem 'selenium-webdriver', '~> 2.25.0'
   #gem 'capybara'
+  gem "fixture_builder", "~> 0.3.3"
+  gem 'shoulda-matchers', '~> 1.2.0'
+  gem 'rr', '>= 1.0.2'
 end
 
 
