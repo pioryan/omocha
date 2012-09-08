@@ -68,6 +68,21 @@ describe User do
         end
       end
 
+      describe "#receive_emails" do
+        it "should retrieve receive_emails pref" do
+          user_preference = Preference.create!(:user => simple_user, :key => 'receive_emails', :value => true)
+          simple_user.receive_emails.should == true
+        end
+      end
+
+      describe "#receive_emails=" do
+        it "should retrieve receive_emails pref" do
+          simple_user.receive_emails = false
+          simple_user.save
+          simple_user.receive_emails.should == false
+        end
+      end
+
     end
 
 

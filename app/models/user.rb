@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
+
+  include Omocha::UserPreferences
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
@@ -10,20 +13,9 @@ class User < ActiveRecord::Base
                   :key, :value
 
   validates_presence_of :firstname, :lastname
-  # attr_accessible :title, :body
   has_many :preferences
 
-  def language
-    self.preferences.find_by_key('language').value
-  end
-
-  def language=(value)
-    pref = self.preferences.where(:key => 'language').first
-    if pref
-      pref.update_attribute(:value, value)
-    else
-      self.preferences.create(:key => 'language', :value => value)
-    end
-  end
+  has_preference :language
+  has_preference :receive_emails, :type => :boolean
 
 end
