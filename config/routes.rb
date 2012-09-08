@@ -8,6 +8,7 @@ Omocha::Application.routes.draw do
     get "users/sign_out",:to => "devise/sessions#destroy"
   end
   
+  match 'users/:id' => 'users#show'
         
   root :to => "home#index"
 end
