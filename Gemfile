@@ -14,8 +14,9 @@ end
 group :development, :test do
   gem 'mysql2'
   gem 'haml-rails'
-  gem 'rspec-rails', '~> 2.0'
-  gem 'capybara'
+  gem 'rspec-rails', '~> 2.8.0'
+  #gem 'selenium-webdriver', '~> 2.25.0'
+  #gem 'capybara'
 end
 
 
