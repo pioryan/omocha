@@ -38,3 +38,14 @@ Omocha::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 end
+
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => 'app6650349@heroku.com',
+  :password       => '82leguoi',
+  :domain         => 'heroku.com'
+}
+
+ActionMailer::Base.delivery_method = :smtp
