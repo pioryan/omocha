@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe User do
   let(:simple_user) { users(:simple_user) }
+
   describe "validations" do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:firstname) }
@@ -20,7 +21,56 @@ describe User do
 
   end
 
+  describe "associations" do
+    it {should have_many(:preferences)}
+  end
+
   it "works" do
     simple_user.email.should == 'simple@simple.com'
+  end
+
+  describe "preferences" do
+    context "language" do
+
+      it "should store language preference of user" do
+        user_preference = Preference.create!(:user => simple_user, :key => 'language', :value => 'en')
+        user_preference.user == simple_user
+      end
+
+      it "should retrieve language preference of user" do
+        user_preference = Preference.create!(:user => simple_user, :key => 'language', :value => 'en')
+        simple_user.preferences.where(:key => 'language').first.value.should == 'en'
+      end
+
+      describe "#language" do
+        it "should retrieve language pref" do
+          user_preference = Preference.create!(:user => simple_user, :key => 'language', :value => 'en')
+          simple_user.language.should == 'en'
+        end
+      end
+
+      describe "#language=" do
+        it "should retrieve language pref" do
+          simple_user.language = "jp"
+          simple_user.save
+          simple_user.language.should == 'jp'
+        end
+
+        context "on update" do
+          it "should not create another entry to preference table" do
+            simple_user.language = "jp"
+            simple_user.save
+            simple_user.language.should == 'jp'
+            simple_user.language = "en"
+            simple_user.preferences.count.should == 1
+            simple_user.language.should == 'en'
+          end
+        end
+      end
+
+    end
+
+
+
   end
 end
