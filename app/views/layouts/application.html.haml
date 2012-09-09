@@ -1,11 +1,13 @@
 !!!5
 %html
   %head
-    %title Omocha
+    %title Figudex: all the toys and figurines under one roof!
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    - if notice
+      %p.notice= notice
+    - if alert
+      %p.alert= alert
     = yield
