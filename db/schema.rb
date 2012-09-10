@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20120909103955) do
 
   create_table "authentications", :force => true do |t|
@@ -18,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20120909103955) do
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+ActiveRecord::Schema.define(:version => 20120908182500) do
+
+  create_table "preferences", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "key"
+    t.string   "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -36,22 +47,25 @@ ActiveRecord::Schema.define(:version => 20120909103955) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                :default => "", :null => false
+    t.string   "encrypted_password",                   :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                        :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "firstname",              :limit => 35
+    t.string   "middlename",             :limit => 35
+    t.string   "lastname",               :limit => 35
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

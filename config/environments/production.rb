@@ -69,4 +69,17 @@ Omocha::Application.configure do
   config.facebook = { :app_id => '', :app_secret => '' }
   config.twitter = { :consumer_key => '', :consumer_secret => '' }
   config.google = { :client_id => '', :client_secret => '' }
+  
+  config.action_mailer.default_url_options = { :host => 'figudex.com' }
 end
+
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :domain         => 'heroku.com'
+}
+
+ActionMailer::Base.delivery_method = :smtp

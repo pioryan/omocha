@@ -39,4 +39,18 @@ Omocha::Application.configure do
   config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce' }
   config.twitter = { :consumer_key => 'ZKrvOoFWPh049TgYGtjyg', :consumer_secret => 'SpldVrALuFEYdcg1bIyiENiOHK8idsGac5WX6XTDs' }
   config.google = { :client_id => '370816069749.apps.googleusercontent.com', :client_secret => 'I0hR68bwIabwfQtbvPRKINWC' }
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 end
+
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => 'app6650349@heroku.com',
+  :password       => '82leguoi',
+  :domain         => 'heroku.com'
+}
+
+ActionMailer::Base.delivery_method = :smtp
