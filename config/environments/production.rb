@@ -65,6 +65,8 @@ Omocha::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.facebook = { :app_id => '', :app_secret => '', :ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}
-
+  config.ca_certs = { :ca_file => '/usr/lib/ssl/certs/ca-certificates.crt' }
+  config.facebook = { :app_id => '', :app_secret => '' }
+  config.twitter = { :consumer_key => '', :consumer_secret => '' }
+  config.google = { :client_id => '', :client_secret => '' }
 end

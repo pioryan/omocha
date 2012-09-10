@@ -6,8 +6,12 @@ gem 'rails', '3.2.6'
 # Add omniauth to devise
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'oauth2'
+
+# supported providers
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 
 
 gem 'haml'

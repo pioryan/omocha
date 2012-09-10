@@ -35,6 +35,8 @@ Omocha::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce', :ca_file => "#{Rails.root}/config/ca-bundle.crt" }
-
+  config.ca_certs = { :ca_file => "#{Rails.root}/config/ca-bundle.crt" }
+  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce' }
+  config.twitter = { :consumer_key => 'ZKrvOoFWPh049TgYGtjyg', :consumer_secret => 'SpldVrALuFEYdcg1bIyiENiOHK8idsGac5WX6XTDs' }
+  config.google = { :client_id => '370816069749.apps.googleusercontent.com', :client_secret => 'I0hR68bwIabwfQtbvPRKINWC' }
 end

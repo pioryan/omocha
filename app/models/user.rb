@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :delete_all
   
   def apply_omniauth(auth)
-    self.email = auth['extra']['raw_info']['email']
+    if auth['extra']['raw_info']['email']
+      self.email = auth['extra']['raw_info']['email']
+    end
     authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => auth['credentials']['token'])
   end
 end

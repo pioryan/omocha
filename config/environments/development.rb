@@ -37,6 +37,9 @@ Omocha::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:8080' }
 
-  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce', :ca_file => "#{Rails.root}/config/ca-bundle.crt" }
-
+  # configs for supported providers for omniauth
+  config.ca_certs = { :ca_file => "#{Rails.root}/config/ca-bundle.crt" }
+  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce' }
+  config.twitter = { :consumer_key => 'ZKrvOoFWPh049TgYGtjyg', :consumer_secret => 'SpldVrALuFEYdcg1bIyiENiOHK8idsGac5WX6XTDs' }
+  config.google = { :client_id => '370816069749.apps.googleusercontent.com', :client_secret => 'I0hR68bwIabwfQtbvPRKINWC' }
 end
