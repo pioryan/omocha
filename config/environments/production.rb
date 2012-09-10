@@ -66,7 +66,7 @@ Omocha::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.ca_certs = { :ca_file => '/usr/lib/ssl/certs/ca-certificates.crt' }
-  config.facebook = { :app_id => '', :app_secret => '' }
+  config.facebook = { :app_id => '165958933490195', :app_secret => '130b3e3dd4ccda84b75f19ebed2a01f6' }
   config.twitter = { :consumer_key => '', :consumer_secret => '' }
   config.google = { :client_id => '', :client_secret => '' }
   
