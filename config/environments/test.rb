@@ -35,5 +35,6 @@ Omocha::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce'}
+  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce', :ca_file => "#{Rails.root}/config/ca-bundle.crt" }
+
 end
