@@ -37,4 +37,6 @@ Omocha::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:8080' }
 
+  config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce'}
+
 end

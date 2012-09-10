@@ -1,4 +1,6 @@
 Omocha::Application.routes.draw do
+  get "authentications/create"
+
   get "registrations/create"
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -7,7 +9,8 @@ Omocha::Application.routes.draw do
   devise_scope :user do
     get "users/sign_out",:to => "devise/sessions#destroy"
   end
-  
-        
+
+  match '/users/auth/:provider/callback', to: 'authentications#create'
+       
   root :to => "home#index"
 end

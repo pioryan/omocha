@@ -1,7 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
+
+# See http://blog.yangtheman.com/2012/02/09/facebook-connect-with-rails-omniauth-devise/
+# Add omniauth to devise
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'oauth2'
+
+
 gem 'haml'
 
 # Bundle edge Rails instead:
