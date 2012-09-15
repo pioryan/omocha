@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+html, body
+{
+  height: 100%;
+}
+
+
 body.custom {
   height: 10px;
 }
