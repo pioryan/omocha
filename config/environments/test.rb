@@ -27,7 +27,7 @@ Omocha::Application.configure do
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  # config.action_mailer.delivery_method = :test
 
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
@@ -39,18 +39,19 @@ Omocha::Application.configure do
   config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce' }
   config.twitter = { :consumer_key => 'ZKrvOoFWPh049TgYGtjyg', :consumer_secret => 'SpldVrALuFEYdcg1bIyiENiOHK8idsGac5WX6XTDs' }
   config.google = { :client_id => '370816069749.apps.googleusercontent.com', :client_secret => 'I0hR68bwIabwfQtbvPRKINWC' }
-  
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # All Action Mailer configuration here
+  config.action_mailer.default_url_options = { :host => 'localhost:8080' }
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    #:domain         => 'heroku.com',
+    :user_name      => 'app6650349@heroku.com',
+    :password       => '82leguoi',
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
 
 end
-
-ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.sendgrid.net',
-  :port           => '587',
-  :authentication => :plain,
-  :user_name      => 'app6650349@heroku.com',
-  :password       => '82leguoi',
-  :domain         => 'heroku.com'
-}
-
-ActionMailer::Base.delivery_method = :smtp

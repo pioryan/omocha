@@ -14,7 +14,7 @@ Omocha::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -35,11 +35,24 @@ Omocha::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:8080' }
-
   # configs for supported providers for omniauth
   config.ca_certs = { :ca_file => "#{Rails.root}/config/ca-bundle.crt" }
   config.facebook = { :app_id => '143491365794041', :app_secret => 'ee0cdaeca10608db3f04d1b2a8b357ce' }
   config.twitter = { :consumer_key => 'ZKrvOoFWPh049TgYGtjyg', :consumer_secret => 'SpldVrALuFEYdcg1bIyiENiOHK8idsGac5WX6XTDs' }
   config.google = { :client_id => '370816069749.apps.googleusercontent.com', :client_secret => 'I0hR68bwIabwfQtbvPRKINWC' }
+
+  # All Action Mailer configuration here
+  config.action_mailer.default_url_options = { :host => 'localhost:8080' }
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :domain         => 'heroku.com',
+    :user_name      => 'app6650349@heroku.com',
+    :password       => '82leguoi',
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+
 end
