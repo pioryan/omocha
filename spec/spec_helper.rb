@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'email_spec'
 
 # Capybara integration
 #require 'capybara/rspec'
@@ -39,4 +40,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # email_spec
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 end

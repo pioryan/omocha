@@ -32,6 +32,7 @@ group :development, :test do
   gem "fixture_builder", "~> 0.3.3"
   gem 'shoulda-matchers', '~> 1.2.0'
   gem 'rr', '>= 1.0.2'
+  gem 'email_spec'
 end
 
 
