@@ -45,7 +45,7 @@ Omocha::Application.configure do
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
-    #:domain         => 'heroku.com',
+    :domain         => 'heroku.com',
     :user_name      => 'app6650349@heroku.com',
     :password       => '82leguoi',
     :authentication => :plain,
