@@ -67,8 +67,8 @@ Omocha::Application.configure do
 
   config.ca_certs = { :ca_file => '/usr/lib/ssl/certs/ca-certificates.crt' }
   config.facebook = { :app_id => '165958933490195', :app_secret => '130b3e3dd4ccda84b75f19ebed2a01f6' }
-  config.twitter = { :consumer_key => '', :consumer_secret => '' }
-  config.google = { :client_id => '', :client_secret => '' }
+  config.twitter = { :consumer_key => 'cLxoZn96Yl3XNcRnjPT3Zw', :consumer_secret => 'BPSRdSfJunk4yXqq7HgdGJAPCnVAg87FrYGPb63Ssw' }
+  config.google = { :client_id => '42139675461.apps.googleusercontent.com', :client_secret => 'M1UdGP_u6aSs-Qa28TACpQK9' }
   
   # All Action Mailer configuration here
   config.action_mailer.default_url_options = { :host => 'figudex.com' }
