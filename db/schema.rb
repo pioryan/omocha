@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909103955) do
+ActiveRecord::Schema.define(:version => 20120922152543) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,25 @@ ActiveRecord::Schema.define(:version => 20120909103955) do
     t.string   "token"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "japanese_name"
+    t.string   "english_name"
+    t.integer  "quantity_produced"
+    t.float    "scale_mini"
+    t.float    "scale_full"
+    t.float    "width"
+    t.float    "length"
+    t.float    "height"
+    t.decimal  "price",             :precision => 10, :scale => 0
+    t.string   "currency"
+    t.string   "jan_code"
+    t.string   "gtin_code"
+    t.string   "upc_code"
+    t.text     "description"
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
   end
 
   create_table "preferences", :force => true do |t|
