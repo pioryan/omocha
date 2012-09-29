@@ -2,7 +2,7 @@
 class Item < ActiveRecord::Base
   include ActiveModel::Validations
 
-  attr_accessible :currency, :description, :english_name, :gtin_code, :height, :jan_code, :japanese_name, :length, :price, :quantity_produced, :scale_full, :scale_mini, :upc_code, :width
+  attr_accessible :currency, :description, :english_name, :gtin_code, :height, :jan_code, :japanese_name, :length, :price, :quantity_produced, :scale_full, :scale_mini, :upc_code, :width, :ean_code, :sku_code, :manufacturer_number
 
   acts_as_taggable
   acts_as_taggable_on :official_title, :edition, :category, :origin, :release_date, :character, :artist, :classification, :material, :other_detail

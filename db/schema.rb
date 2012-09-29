@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929074533) do
+ActiveRecord::Schema.define(:version => 20120929094812) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -31,14 +31,17 @@ ActiveRecord::Schema.define(:version => 20120929074533) do
     t.float    "width"
     t.float    "length"
     t.float    "height"
-    t.decimal  "price",             :precision => 10, :scale => 0
+    t.decimal  "price",               :precision => 10, :scale => 0
     t.string   "currency"
     t.string   "jan_code"
     t.string   "gtin_code"
     t.string   "upc_code"
     t.text     "description"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "ean_code"
+    t.string   "sku_code"
+    t.string   "manufacturer_number"
   end
 
   create_table "preferences", :force => true do |t|
