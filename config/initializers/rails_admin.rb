@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # RailsAdmin config file. Generated on August 18, 2012 18:58
 # See github.com/sferik/rails_admin for more informations
 
@@ -103,4 +104,16 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
+
+  config.models do |model|
+    edit do
+      fields_of_type :tag_list do |f|
+        if f.name == :tag_list
+          hide
+        else
+          partial 'tag_list_with_suggestions'
+        end
+      end
+    end
+  end
 end

@@ -70,6 +70,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'rails_admin'
-gem 'recaptcha', :require => 'recaptcha/rails'
+# For tagging
 gem 'acts-as-taggable-on', '~> 2.3.1'
+
+gem 'rails_admin'
+# For rails admin tags
+gem 'rails_admin_tag_list'
+
+gem 'recaptcha', :require => 'recaptcha/rails'

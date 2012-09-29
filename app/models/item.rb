@@ -4,6 +4,11 @@ class Item < ActiveRecord::Base
 
   attr_accessible :currency, :description, :english_name, :gtin_code, :height, :jan_code, :japanese_name, :length, :price, :quantity_produced, :scale_full, :scale_mini, :upc_code, :width
 
+  acts_as_taggable
+  acts_as_taggable_on :official_title, :edition, :category, :origin, :release_date, :character, :artist, :classification, :material, :other_detail
+  #For rails admin..
+  attr_accessible :tag_list, :official_title_list, :edition_list, :category_list, :origin_list, :release_date_list, :character_list, :artist_list, :classification_list, :material_list, :other_detail_list
+
   with_options :allow_nil => true do |item|
     item.validates :height, :numericality => true
     item.validates :width, :numericality => true
