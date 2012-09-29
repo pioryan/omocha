@@ -72,3 +72,4 @@ gem 'jquery-rails'
 
 gem 'rails_admin'
 gem 'recaptcha', :require => 'recaptcha/rails'
+gem 'acts-as-taggable-on', '~> 2.3.1'
