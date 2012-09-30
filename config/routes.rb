@@ -1,11 +1,12 @@
 Omocha::Application.routes.draw do
-  wiki_root '/wiki'
 
   get "authentications/create"
 
   get "registrations/create"
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  wiki_root '/wiki'
 
   devise_for :users,  :controllers => { :registrations => "registrations" }
   devise_scope :user do

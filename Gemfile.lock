@@ -12,7 +12,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    BlueCloth (1.0.1)
     actionmailer (3.2.6)
       actionpack (= 3.2.6)
       mail (~> 2.4.4)
@@ -45,6 +44,7 @@ GEM
     arel (3.0.2)
     bbenezech-nested_form (0.0.6)
     bcrypt-ruby (3.0.1)
+    bluecloth (2.2.0)
     bootstrap-sass (2.0.4.0)
     builder (3.0.0)
     coffee-rails (3.2.2)
@@ -223,8 +223,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  BlueCloth
   acts-as-taggable-on (~> 2.3.1)
+  bluecloth (>= 2.0.0)
   bootstrap-sass (~> 2.0.4.0)
   coffee-rails (~> 3.2.1)
   devise
