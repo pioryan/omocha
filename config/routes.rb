@@ -1,4 +1,6 @@
 Omocha::Application.routes.draw do
+  wiki_root '/wiki'
+
   get "authentications/create"
 
   get "registrations/create"

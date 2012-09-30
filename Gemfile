@@ -73,6 +73,10 @@ gem 'jquery-rails'
 # For tagging
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
+# For wiki
+gem 'BlueCloth'
+gem 'irwi', :git => 'git://github.com/alno/irwi.git'
+
 gem 'rails_admin'
 # For rails admin tags
 gem 'rails_admin_tag_list'
