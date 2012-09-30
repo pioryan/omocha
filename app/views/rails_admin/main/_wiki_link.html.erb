@@ -1,1 +1,1 @@
-<% value.each do |tag| %><%= link_to tag, ('/wiki/'+tag) %> <% end %>
+<% value.each do |tag| %><%= link_to tag, ('/wiki/'+tag.parameterize.underscore.camelize) %> <% end %>
