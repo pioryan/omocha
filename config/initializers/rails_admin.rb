@@ -116,33 +116,28 @@ RailsAdmin.config do |config|
       end
     end
     list do
-      field :category_list
-      field :official_title_list
-      field :edition_list
-      field :character_list
       fields_of_type :tag_list do |f|
-#        partial 'wiki_link'
-#        field f do
-#          partial 'wiki_link'
-#        end
-#        partial 'wiki_link'
         pretty_value do
           bindings[:view].render :partial => 'wiki_link', :locals => {:field => f, :value => value}
-#          bindings[:view].link_to(f.name, :controller => 'wiki', :action => 'show', :path => value)
-#          bindings[:view].wiki_page_path(value)
         end
       end
     end
   end
 
-#  config.model Item do |model|
-#    list do
-#      field :category_list, :official_title_list, :edition_title_list, :character_list do
-#        pretty_value do
-#          partial 'wiki_link'
-#          bindings[:view].wiki_page_path(value)
-#        end
-#      end
-#    end
-#  end
+  config.model Item do |model|
+    list do
+      field :category_list
+      field :official_title_list
+      field :edition_list
+      field :character_list
+    end
+    edit do
+      configure :rates_without_dimension do
+        hide
+      end
+      configure :raters_without_dimension do
+        hide
+      end
+    end
+  end
 end

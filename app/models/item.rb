@@ -9,6 +9,8 @@ class Item < ActiveRecord::Base
   #For rails admin..
   attr_accessible :tag_list, :official_title_list, :edition_list, :category_list, :origin_list, :release_date_list, :character_list, :artist_list, :classification_list, :material_list, :other_detail_list
 
+  ajaxful_rateable :stars => 10, :allow_update => true
+
   with_options :allow_nil => true do |item|
     item.validates :height, :numericality => true
     item.validates :width, :numericality => true

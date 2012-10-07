@@ -72,6 +72,8 @@ gem 'jquery-rails'
 
 # For tagging
 gem 'acts-as-taggable-on', '~> 2.3.1'
+# gem 'acts_as_rateable'
+gem 'ajaxful_rating', "~> 3.0.0.beta8"
 
 # For wiki
 gem 'bluecloth', '>= 2.0.0'
