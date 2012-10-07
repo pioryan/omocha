@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20121007121207) do
     t.string   "manufacturer_number"
   end
 
+  create_table "notifications", :force => true do |t|
+    t.string   "sender"
+    t.string   "receiver"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "preferences", :force => true do |t|
     t.integer  "user_id"
     t.string   "key"
