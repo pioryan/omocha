@@ -1,0 +1,3 @@
+class FriendRequestNotification < Notification
+
+end

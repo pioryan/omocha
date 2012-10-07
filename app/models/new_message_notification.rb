@@ -1,0 +1,3 @@
+class NewMessageNotification < Notification
+
+end

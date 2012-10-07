@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930050909) do
+ActiveRecord::Schema.define(:version => 20121007111046) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20120930050909) do
     t.string   "ean_code"
     t.string   "sku_code"
     t.string   "manufacturer_number"
+  end
+
+  create_table "notifications", :force => true do |t|
+    t.string   "sender"
+    t.string   "receiver"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "preferences", :force => true do |t|
