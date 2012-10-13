@@ -85,4 +85,4 @@ gem 'rails_admin_tag_list'
 
 gem 'recaptcha', :require => 'recaptcha/rails'
 
-gem 'paperclip', '~> 2'
+gem 'paperclip', '~> 3.0'
