@@ -1,0 +1,12 @@
+development:
+  default_host: localhost
+  http: 8080
+test:
+  default_host: localhost
+  port: 3000
+development:
+  default_host: localhost
+  http: 8080
+production:
+  default_host: omocha.herokuapp.com
+  http: ""

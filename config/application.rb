@@ -55,6 +55,22 @@ module Omocha
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    domains_and_ports = YAML.load_file(Rails.root + 'config/domains_and_ports.yml')[Rails.env].symbolize_keys
+    http_port =  domains_and_ports[:http].blank? ? nil : domains_and_ports[:http]
+
+    config.default_host = [domains_and_ports[:default_host], http_port].compact.join(":")
+    if Rails.env.production?
+      config.paperclip_storage = :s3
+      s3_config = YAML.load_file("#{Rails.root}/config/s3.yml")
+      config.s3_credentials =  YAML.load_file("#{Rails.root}/config/s3.yml")
+    else
+      config.paperclip_storage = :filesystem
+    end
+
+    config.paperclip_path = 'public/system/:class/:attachment/:id/:style_:timestamp:extension'
+    config.paperclip_protocol = 'http'
+    config.paperclip_url = ':dev_test_url'
+
     config.generators do |g|
       g.template_engine :haml
     end
@@ -63,5 +79,10 @@ module Omocha
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    def default_host
+      config.default_host
+    end
+    
   end
 end

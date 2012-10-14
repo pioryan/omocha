@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007121207) do
+ActiveRecord::Schema.define(:version => 20121014171243) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(:version => 20121007121207) do
     t.string   "ean_code"
     t.string   "sku_code"
     t.string   "manufacturer_number"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
   end
 
   create_table "notifications", :force => true do |t|

@@ -2,7 +2,12 @@
 class Item < ActiveRecord::Base
   include ActiveModel::Validations
 
-  attr_accessible :currency, :description, :english_name, :gtin_code, :height, :jan_code, :japanese_name, :length, :price, :quantity_produced, :scale_full, :scale_mini, :upc_code, :width, :ean_code, :sku_code, :manufacturer_number
+  attr_accessible :currency, :description, :english_name,
+                  :gtin_code, :height, :jan_code, :japanese_name,
+                  :length, :price, :quantity_produced, :scale_full,
+                  :scale_mini, :upc_code, :width, :ean_code, :sku_code,
+                  :manufacturer_number, :asset_file_name, :asset_content_type,
+                  :asset_file_size, :asset_updated_at, :asset
 
   acts_as_taggable
   acts_as_taggable_on :official_title, :edition, :category, :origin, :release_date, :character, :artist, :classification, :material, :other_detail
@@ -24,4 +29,9 @@ class Item < ActiveRecord::Base
   validates_presence_of :price, :currency
 
   validates_with PresenceOfEither, :fields => [:english_name, :japanese_name]
+
+  has_attached_file :asset, {
+      :styles => { :medium => "300x300>", :thumb => "100x100>" },
+      :default_url => ":custom_url"
+  }.merge(PAPERCLIP_DEFAULT_OPTIONS)
 end
