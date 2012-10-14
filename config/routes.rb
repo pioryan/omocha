@@ -16,6 +16,8 @@ Omocha::Application.routes.draw do
   match '/users/auth/:provider/callback', to: 'authentications#create'
        
   match 'users/:id' => 'users#show'
+
+  resources :items
         
   root :to => "home#index"
 end

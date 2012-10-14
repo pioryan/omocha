@@ -86,3 +86,6 @@ gem 'rails_admin_tag_list'
 gem 'recaptcha', :require => 'recaptcha/rails'
 
 gem 'paperclip', '~> 3.0'
+
+# For easier forms
+gem 'formtastic'
