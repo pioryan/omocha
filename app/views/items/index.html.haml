@@ -1,0 +1,16 @@
+%h1 Listing items
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @items.each do |item|
+    %tr
+      %td= link_to 'Show', item
+      %td= link_to 'Edit', edit_item_path(item)
+
+%br
+
+= link_to 'New Item', new_item_path
