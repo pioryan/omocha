@@ -117,8 +117,10 @@ RailsAdmin.config do |config|
     end
     list do
       fields_of_type :tag_list do |f|
-        pretty_value do
-          bindings[:view].render :partial => 'wiki_link', :locals => {:field => f, :value => value}
+        if [:official_title_list, :character_list, :origin_list].include? f.name
+          pretty_value do
+            bindings[:view].render :partial => 'wiki_link', :locals => {:field => f, :value => value}
+          end
         end
       end
     end
@@ -126,10 +128,11 @@ RailsAdmin.config do |config|
 
   config.model Item do |model|
     list do
-      field :category_list
       field :official_title_list
-      field :edition_list
+      field :origin_list
       field :character_list
+      field :official_title_list
+      searchable true
     end
     edit do
       configure :rates_without_dimension do
