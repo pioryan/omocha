@@ -75,6 +75,11 @@ GEM
       activesupport (>= 2)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    formtastic-plus-bootstrap (1.1.0)
+      bootstrap-sass (~> 2.0.3)
+      formtastic (~> 2.2)
+      railties (>= 3.1.0)
+      sass-rails
     haml (3.1.7)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -243,6 +248,7 @@ DEPENDENCIES
   execjs
   fixture_builder (~> 0.3.3)
   formtastic
+  formtastic-plus-bootstrap
   haml
   haml-rails
   irwi!

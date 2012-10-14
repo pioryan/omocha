@@ -89,3 +89,4 @@ gem 'paperclip', '~> 3.0'
 
 # For easier forms
 gem 'formtastic'
+gem 'formtastic-plus-bootstrap'
