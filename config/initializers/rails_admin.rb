@@ -132,7 +132,6 @@ RailsAdmin.config do |config|
       field :origin_list
       field :character_list
       field :official_title_list
-      searchable true
     end
     edit do
       configure :rates_without_dimension do
